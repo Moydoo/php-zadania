@@ -1,0 +1,20 @@
+{%  extends'base.html.twig' %}
+
+{% block title %}
+Element view
+{%  endblock %}
+{% block body %}
+    {%  if item is defined and item|length %}
+        <dl>
+            <dt>Id</dt>
+            <dd>{{ item.id }}</dd>
+            <dt>Title</dt>
+            <dd>{{ item.title }}</dd>
+            <dt>Tags</dt>
+            <dd>{{ item.tags|join(',') }}</dd>
+        </dl>
+    {% else %}
+        <p>Element not found.</p>
+    {% endif %}
+    <a href="{{ url('test_index') }}">Go back</a>
+{% endblock %}
